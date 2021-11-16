@@ -6,6 +6,8 @@
 :root {
   --portfolio-card-gap: 30px;
 
+  --button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   --icon-background-color: #f5f4fa;
   --primary-text-color: #757575;
   --primary-title-color: #212121;
@@ -113,7 +115,7 @@ img {
 
 .site-nav .link,
 .contact-list .link {
-  display: block;
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -129,6 +131,7 @@ img {
 
 .contact-list .link {
   color: var(--primary-text-color);
+  align-items: center;
 }
 
 .site-nav .link:hover,
@@ -142,7 +145,6 @@ img {
 }
 
 .contact-list .link::before {
-  display: inline-block;
   content: '';
   margin-right: 10px;
   align-items: center;
@@ -183,9 +185,11 @@ img {
   max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/heroBanner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* --------------------------Кнопки------------------------*/
@@ -235,6 +239,7 @@ img {
 .button.secondary-button:focus {
   color: var(--primary-white);
   background-color: var(--accent-color);
+  box-shadow: var(--button-shadow);
 }
 
 .button.primary-button:hover,
@@ -369,7 +374,7 @@ img {
 }
 
 .link-instagram {
-  background-image: url(../images/instagram-2.svg);
+  background-image: url(../images/instagram-1.svg);
   margin-right: 10px;
 }
 .link-twitter {
@@ -385,13 +390,6 @@ img {
 .link-linkedin {
   background-image: url(../images/linkedin-1.svg);
   margin-right: 0;
-}
-
-.link-instagram:hover,
-.link-twitter:hover,
-.link-facebook:hover,
-.link-linkedin:hover {
-  background-color: var(--button-hover-color);
 }
 
 /*--------------------------------Футер--------------------*/
@@ -423,6 +421,55 @@ img {
 
 .footer-contact-list .item:first-child {
   margin-bottom: 9px;
+}
+.footer .container {
+  display: flex;
+}
+.footer-social-link {
+  display: flex;
+}
+
+.footer-join-block {
+  align-items: center;
+  margin-left: 70px;
+}
+
+.footer-join-text {
+  margin-bottom: 20px;
+
+  color: var(--primary-white);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-social-link .link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-link .link-instagram {
+  background-image: url(../images/instagram-2.svg);
+  margin-right: 10px;
+}
+.footer-social-link .link-twitter {
+  background-image: url(../images/twitter-2.svg);
+  margin-right: 10px;
+}
+
+.footer-social-link .link-facebook {
+  background-image: url(../images/facebook-2.svg);
+  margin-right: 10px;
+}
+
+.footer-social-link .link-linkedin {
+  background-image: url(../images/linkedin-2.svg);
+  margin-right: 0;
+}
+
+.footer-social-link .link-instagram:hover,
+.footer-social-link .link-twitter:hover,
+.footer-social-link .link-facebook:hover,
+.footer-social-link .link-linkedin:hover {
+  background-color: var(--button-hover-color);
 }
 
 /*------------------------------Портфолио-------------------*/
