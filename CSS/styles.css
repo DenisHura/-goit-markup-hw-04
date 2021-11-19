@@ -6,9 +6,8 @@
 :root {
   --portfolio-card-gap: 30px;
 
-  --button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-    --icon-social-link-color:#AFB1B8
+  --client-logo-color: #afb1b8;
+  --icon-social-link-color: #afb1b8;
   --icon-background-color: #f5f4fa;
   --primary-text-color: #757575;
   --primary-title-color: #212121;
@@ -19,8 +18,13 @@
   --secondary-btn-color: #f5f4fa;
   --team-section-background-color: #f5f4fa;
   --border-header-color: #ececec;
+
+  --button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+
   --team-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+
   --portfolio-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -149,17 +153,6 @@ img {
 .site-nav .current-link {
   color: var(--accent-color);
 }
-
-/* .site-nav .current-link:after {
-  display: flex;
-  content: '';
-  position: relative;
-
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--accent-color);
-} */
 
 .contact-list .item {
   width: 100%;
@@ -299,8 +292,18 @@ img {
   line-height: 1.14;
   text-transform: uppercase;
 }
+.icon-container {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 
-.benefit-item::before {
+  background-color: var(--icon-background-color);
+}
+
+/* .benefit-item::before {
   margin-bottom: 30px;
 
   display: block;
@@ -311,19 +314,7 @@ img {
   background-size: 70px;
   background-position: center;
   background-repeat: no-repeat;
-}
-.icon-antenna::before {
-  background-image: url(../images/antenna-1.svg);
-}
-.icon-clock::before {
-  background-image: url(../images/clock-1.svg);
-}
-.icon-diagram::before {
-  background-image: url(../images/diagram-1.svg);
-}
-.icon-astronaut::before {
-  background-image: url(../images/astronaut-1.svg);
-}
+} */
 
 /* ---------------------------Чем мы занимаемся ------------------*/
 .section-title {
@@ -333,6 +324,7 @@ img {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+  letter-spacing: 0.03em;
 }
 
 .reference-list {
@@ -410,7 +402,6 @@ img {
   justify-content: center;
 
   color: var(--icon-social-link-color);
-  
 }
 
 .social-link-icon {
@@ -418,11 +409,10 @@ img {
 }
 
 .social-link:hover,
-.social-link:focus{
+.social-link:focus {
   background-color: var(--accent-color);
   color: var(--primary-white);
 }
-
 
 /*--------------------------------Футер--------------------*/
 .footer {
@@ -451,7 +441,6 @@ img {
   text-decoration: none;
 }
 
-
 .footer-contact-list .item:first-child {
   margin-bottom: 9px;
 }
@@ -459,10 +448,9 @@ img {
   display: flex;
 }
 
-
 .footer-join-block {
   align-items: center;
-  margin-left: 70px;  
+  margin-left: 70px;
 }
 
 .footer-join-text {
@@ -471,24 +459,49 @@ img {
   color: var(--primary-white);
   font-weight: 700;
   text-transform: uppercase;
-} 
+}
 
-.footer-social-list{
+.footer-social-list {
   display: flex;
-  }
+}
 
-  .footer-social-list .link{
+.footer-social-list .link {
   color: var(--primary-white);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .social-link:hover,
-.social-link:focus{
+.social-link:focus {
   background-color: var(--accent-color);
   color: var(--primary-white);
 }
 
+/*------------------------------Клиенты-------------------*/
 
+.client-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--client-logo-color);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  color: var(--client-logo-color);
+}
+
+.client-icon {
+  fill: currentColor;
+}
+
+.client-link:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
 
 /*------------------------------Портфолио-------------------*/
 
@@ -520,9 +533,9 @@ img {
   margin-bottom: var(--portfolio-card-gap);
 }
 
-/* calc((100% - кол-во марджинов в строке * кол-во марджинов) /  кол-во элементов в строке */
+/* calc((100% - кол-во марджинов в строке * кол-во марджинов) /  кол-во элементов в строке
 
-/* .project-item {
+.project-item {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
@@ -534,8 +547,8 @@ img {
 
 .project-item:nth-last-child(-n + 3) {
   margin-bottom: 0;
-} */
-/* может быть еще вариант более сложных селекторов:
+}
+может быть еще вариант более сложных селекторов:
 в классе project-item всем элементам кроме каждого третьего установить отступ 30px (чтобы сначала не назначать, а потом не убирать отступы)
 .project-item:not(:nth-child(3n)){
     margin-right: 30px;
