@@ -511,6 +511,7 @@ img {
 .project-type {
   font-size: 16px;
   line-height: 1.87;
+  color: var(--primary-text-color);
 }
 
 .project-list {
@@ -562,4 +563,8 @@ img {
 
   border: 1px solid #eeeeee;
   border-top: none;
+}
+
+.project-item-link {
+  text-decoration: none;
 }
